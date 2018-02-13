@@ -19,7 +19,6 @@ export class ProfileComponent implements OnInit {
 
     this.githubService.getRepos().subscribe(repos => {
       this.repos = repos;
-      console.log(repos);
     });
   }
 

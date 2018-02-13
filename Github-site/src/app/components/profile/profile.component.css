@@ -17,27 +17,43 @@
     padding-left: 12px;
 }
 
+/* Repo information */
+
 .user-repo-section {
-  padding: 0px 6px;
+  padding: 0px 24px;
 }
 
-.repositories-title{
-    margin-left: 6px;
-}
+.repositories-title{}
 
-.user-repo-list{
+.user-repo-item{
     padding: 0px;
+    overflow: auto;
+    margin: 12px 0px;
 }
 
-.user-repo-list-item-link{
-    background-color: lightslategray;
-    padding: 12px;
-    color: white;
+.user-repo-info{
+    width: 75%;
+    float: left;
+    margin: 0;
 }
 
-.user-repo-list-item-link:hover{
+.user-repo-info > .user-repo-item-link{
+    text-decoration: none;
+}
+
+.user-repo-item-link:hover{
     background-color: lightgray;    
 }
+
+.user-repo-additionals {
+  width: 25%;
+  float: left;
+}
+.user-repo-additionals > watchers, forks {
+  width: 50%;
+  float: left;
+}
+
 
 
 

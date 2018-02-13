@@ -13,11 +13,17 @@
 
   <section class="user-repo-section">
     <h3 class="repositories-title">Repositories</h3>
-    <ul class="user-repo-list">
-      <li *ngFor="let repo of repos" class="user-repo-list-item">
-        <a class="user-repo-list-item-link" [href]="repo.html_url" target="_blank">{{repo.name}}</a>
-        <p></p>
-      </li>
-    </ul>
+    <div *ngFor="let repo of repos" class="user-repo-item">
+      <div class="user-repo-item">
+        <div class="user-repo-info">
+          <a class="user-repo-item-link" [href]="repo.html_url" target="_blank">{{repo.name}}</a>
+          <p *ngIf="repo.description">{{repo.description}}</p>
+        </div>
+        <div class="user-repo-additionals">
+          <span class="watchers">Watchers: {{repo.watchers_count}}</span>
+          <span class="forks">Forks: {{repo.forks_count}}</span>
+        </div>
+      </div>
+    </div>
   </section>
 </div>

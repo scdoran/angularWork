@@ -46,7 +46,7 @@ export class HeroService {
   // Creating obverable that will emit single Hero array as value
   getHeroes(): Observable<Hero[]> {
     // returning array of HEROES using HTTP.get.
-    // Defining the <Hero[]> has a type will turn the JSON object into an array.
+    // Defining the <Hero[]> argument as a type will turn the JSON object into an array.
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
         // Tap does not do anything to the data, it just passes it along.

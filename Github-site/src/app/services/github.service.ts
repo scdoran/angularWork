@@ -5,6 +5,9 @@ import { catchError, map, tap } from "rxjs/operators";
 import { Observable } from "rxjs/Observable";
 import { of } from "rxjs/observable/of";
 
+import { Repo } from "../classes/repo";
+import { User } from '../classes/user';
+
 @Injectable()
 export class GithubService {
   private username: string;

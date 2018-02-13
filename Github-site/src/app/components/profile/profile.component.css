@@ -1,0 +1,15 @@
+.git-profile-pic{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.git-profile-pic-image {
+    border-radius: 50%;
+    
+}
+
+.git-profile-pic-caption {
+
+}
+

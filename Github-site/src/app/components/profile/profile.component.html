@@ -1,0 +1,9 @@
+<div *ngIf="user">
+  <figure class="git-profile-pic">
+    <img class="git-profile-pic-image" [src]="user.avatar_url" alt="Picture of {{user.name}}" />
+    <h1 class="git-profile-pic-caption">{{user.name}}</h1>
+  </figure>
+  <h3>{{user.login}}</h3>
+  <h3>{{user.bio}}</h3>
+  <h3>{{user.company}}</h3>
+</div>

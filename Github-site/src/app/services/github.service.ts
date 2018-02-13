@@ -50,4 +50,13 @@ export class GithubService {
         catchError(this.handleError(`Failed getting ${this.username} by ${this.client_id} and ${this.client_secret}`))
       );
   }
+
+  getRepos() {
+    return this.http
+      .get(`http://api.github.com/users/${this.username}/repos?=${this.client_id}&client_secret=${this.client_secret}`)
+      .pipe(
+        map(res => res.json()),
+        catchError(this.handleError(`Failed getting ${this.username} by ${this.client_id} and ${this.client_secret}`))
+      );
+  }
 }

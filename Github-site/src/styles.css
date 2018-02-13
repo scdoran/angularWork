@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+}
+
+nav{
+    background-color: lightslategray;
+}
+
+nav > ul{
+    list-style: none;
+    margin: 0px 0px 12px 0px;
+    padding: 0px;
+}
+
+li{
+    display: inline-block;
+    margin: 12px 6px;
+}
+
+li > a {
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+}
+
+a:hover{
+    background-color: lightgrey;
+}

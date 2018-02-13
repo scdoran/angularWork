@@ -8,13 +8,18 @@ import { GithubService } from '../../services/github.service';
 })
 export class ProfileComponent implements OnInit {
   user: any;
+  repos: any;
 
   constructor(private githubService: GithubService) { }
 
   ngOnInit() {
-    this.githubService.getUser()
-      .subscribe(user=>{
+    this.githubService.getUser().subscribe(user=>{
         this.user = user;
+    });
+
+    this.githubService.getRepos().subscribe(repos => {
+      this.repos = repos;
+      console.log(repos);
     });
   }
 

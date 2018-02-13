@@ -1,9 +1,23 @@
+
+
 <div *ngIf="user">
-  <figure class="git-profile-pic">
-    <img class="git-profile-pic-image" [src]="user.avatar_url" alt="Picture of {{user.name}}" />
-    <h1 class="git-profile-pic-caption">{{user.name}}</h1>
+  <figure class="user-profile-pic">
+    <img class="user-profile-pic-image" [src]="user.avatar_url" alt="Picture of {{user.name}}" />
+    <section class="user-profile-pic-details">
+      <h3>{{user.name}} <a [href]="user.html_url">({{user.login}})</a></h3>
+      <p>{{user.bio}}</p>
+      <p>Company: {{user.company}}</p>
+      <p>{{user.location}}</p>      
+    </section>
   </figure>
-  <h3>{{user.login}}</h3>
-  <h3>{{user.bio}}</h3>
-  <h3>{{user.company}}</h3>
+
+  <section class="user-repo-section">
+    <h3 class="repositories-title">Repositories</h3>
+    <ul class="user-repo-list">
+      <li *ngFor="let repo of repos" class="user-repo-list-item">
+        <a class="user-repo-list-item-link" [href]="repo.html_url" target="_blank">{{repo.name}}</a>
+        <p></p>
+      </li>
+    </ul>
+  </section>
 </div>

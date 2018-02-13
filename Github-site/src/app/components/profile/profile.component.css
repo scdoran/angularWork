@@ -1,15 +1,43 @@
-.git-profile-pic{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+.user-profile-pic{
+    display: block;
+    overflow: auto;
+    margin: 0;
 }
 
-.git-profile-pic-image {
+.user-profile-pic-image {
+    float: left;
     border-radius: 50%;
-    
+    width: 38%;
 }
 
-.git-profile-pic-caption {
-
+.user-profile-pic-details {
+    width: 58%;
+    float: left;
+    margin: 0 auto;
+    padding-left: 12px;
 }
+
+.user-repo-section {
+  padding: 0px 6px;
+}
+
+.repositories-title{
+    margin-left: 6px;
+}
+
+.user-repo-list{
+    padding: 0px;
+}
+
+.user-repo-list-item-link{
+    background-color: lightslategray;
+    padding: 12px;
+    color: white;
+}
+
+.user-repo-list-item-link:hover{
+    background-color: lightgray;    
+}
+
+
 

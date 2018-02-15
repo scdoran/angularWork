@@ -1,7 +1,4 @@
-<div id="user-search-component">
-  <h4>User Search</h4>
-  <input id="userSearch" [(ngModel)]="username" name="username" (keyup)="searchUser()"/>
-</div>
+<app-user-search></app-user-search>
 
 <div *ngIf="user">
   <figure class="user-profile-pic">
@@ -13,20 +10,6 @@
       <p>{{user.location}}</p>      
     </section>
   </figure>
-
-  <section class="user-repo-section">
-    <h3 class="repositories-title">Repositories</h3>
-    <div *ngFor="let repo of repos" class="user-repo-item">
-      <div class="user-repo-item">
-        <div class="user-repo-info">
-          <a class="user-repo-item-link" [href]="repo.html_url" target="_blank">{{repo.name}}</a>
-          <p *ngIf="repo.description">{{repo.description}}</p>
-        </div>
-        <div class="user-repo-additionals">
-          <span class="watchers">Watchers: {{repo.watchers_count}}</span>
-          <span class="forks">Forks: {{repo.forks_count}}</span>
-        </div>
-      </div>
-    </div>
-  </section>
 </div>
+
+<app-user-repos [user]="username"></app-user-repos>

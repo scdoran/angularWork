@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import { GithubService } from "../../services/github.service";
+import { GithubService } from '../../services/github.service';
+import { User } from '../../user';
 
 @Component({
   selector: "app-profile",
@@ -8,23 +9,16 @@ import { GithubService } from "../../services/github.service";
   styleUrls: ["./profile.component.css"],
 })
 export class ProfileComponent {
-  user: any;
-  repos: any[];
-  username: string;
+  user: User;
+  username: string = 'scdoran';
 
   constructor(private githubService: GithubService) {
-    this.user = false;
+    this.getUser();
   }
 
-  searchUser() {
-    this.githubService.updateUser(this.username);
-
-    this.githubService.getUser().subscribe(user => {
+  getUser() {
+    this.githubService.getUser(this.username).subscribe(user => {
       this.user = user;
     });
-
-    this.githubService.getRepos().subscribe(repos => {
-      this.repos = repos;
-    })
   }
 }

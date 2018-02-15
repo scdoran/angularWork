@@ -11,14 +11,10 @@
 .navbar-li {
   display: inline-block;
   margin: 12px 6px;
+  color: white;  
 }
 
-.navbar-li> .navbar-link {
+/* .navbar-li> .navbar-link {
   text-decoration: none;
-  color: white;
   padding: 12px;
-}
-
-.navbar-link:hover {
-  background-color: lightgrey;
-}
+} */

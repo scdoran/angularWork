@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 
 import { GithubService } from '../../services/github.service';
 import { Repo } from "../../repo";
@@ -9,16 +9,19 @@ import { User } from "../../user";
   templateUrl: "./user-repos.component.html",
   styleUrls: ["./user-repos.component.css"]
 })
-export class UserReposComponent implements OnInit {
+export class UserReposComponent implements OnChanges {
   repos: Repo[];
-  @Input() user: User;
+  user: User;
+  @Input() username: string;
 
   constructor(private githubService: GithubService) {}
 
-  ngOnInit() {}
+  ngOnChanges() {
+    this.getRepos();
+  }
 
   getRepos() {
-    this.githubService.getRepos(this.user).subscribe(repos => {
+    this.githubService.getRepos(this.username).subscribe(repos => {
       this.repos = repos;
     });
   }

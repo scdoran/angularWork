@@ -12,8 +12,8 @@ import { Repo } from '../../repo';
 })
 export class UserSearchComponent implements OnInit {
   private user: User;
-  private repos: Repo;
-  private username: string;
+  private repos: Repo[];
+  username: string;
 
   constructor(private githubService: GithubService) { }
 
@@ -22,12 +22,12 @@ export class UserSearchComponent implements OnInit {
   searchUser() {
     this.githubService.updateUser(this.username);
 
-    this.githubService.getUser(this.username).subscribe(user => {
-      this.user = user;
-    })
+    // this.githubService.getUser(this.username).subscribe(user => {
+    //   this.user = user;
+    // })
 
-    this.githubService.getRepos(this.username).subscribe(repos => {
-      this.repos = repos;
-    });
+    // this.githubService.getRepos().subscribe(repos => {
+    //   this.repos = repos;
+    // });
   }
 }

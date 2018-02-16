@@ -2,3 +2,5 @@
   <h4>User Search</h4>
   <input id="userSearch" [(ngModel)]="username" name="username" (keyup)="searchUser()" />
 </div>
+<app-profile [username]="username"></app-profile>
+<app-user-repos [username]="username"></app-user-repos>

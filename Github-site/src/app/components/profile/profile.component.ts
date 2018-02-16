@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { GithubService } from '../../services/github.service';
 import { User } from '../../user';
@@ -6,13 +6,17 @@ import { User } from '../../user';
 @Component({
   selector: "app-profile",
   templateUrl: "./profile.component.html",
-  styleUrls: ["./profile.component.css"],
+  styleUrls: ["./profile.component.css"]
 })
 export class ProfileComponent {
   user: User;
-  username: string = 'scdoran';
+  @Input() username: string;
 
-  constructor(private githubService: GithubService) {
+  constructor(private githubService: GithubService) { }
+
+  ngOnInit() {  }
+
+  ngOnChanges() {
     this.getUser();
   }
 
